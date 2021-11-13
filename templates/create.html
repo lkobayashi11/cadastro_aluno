@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Criar novo responsável {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome"
+               placeholder="Nome responsável" class="form-control"
+               value="{{ request.form['nome'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input name="cpf" placeholder="CPF"
+                  class="form-control">{{ request.form['cpf'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <label for="rg">RG</label>
+        <input name="rg" placeholder="RG"
+                  class="form-control">{{ request.form['rg'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <label for="profissao">Profissão</label>
+        <input name="profissao" placeholder="Profissão"
+                  class="form-control">{{ request.form['profissao'] }}</input>
+    </div>
+
+    <div class="form-group">
+       <label for="empresa">Empresa em que trabalha</label>
+       <select name="empresa" id="empresa">
+            {% for empresas in empresaList %}
+            <option value="{{ empresas['idempresa'] }}" selected>
+            {{ empresas['idempresa']}}
+            {{ empresas['nome']}}
+            </option>
+
+            {% endfor %}
+
+        </select>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+</form>
+{% endblock %}

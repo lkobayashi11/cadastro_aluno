@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% block title %}
+        <h1>Responsável </h1>
+        <h4> <a href="{{ url_for('create')}}">
+            <span class="badge badge-warning">Criar</span>
+            </a>
+        </h4>
+    {% endblock %}
+
+    {% for post in posts %}
+        <a href="{{ url_for('post', post_id=post['idresponsavel']) }}">
+            <h3>{{ post['nome'] }}</h3>
+        </a>
+        <span class="badge badge-primary">{{ post['created'] }}</span>
+        <a href="{{ url_for('edit', id=post['idresponsavel']) }}">
+            <span class="badge badge-warning">Alterar</span>
+        </a>
+        <hr>
+    {% endfor %}
+{% endblock %}

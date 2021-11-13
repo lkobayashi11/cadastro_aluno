@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Criar novo aluno {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome"
+               placeholder="Nome aluno" class="form-control"
+               value="{{ request.form['nome'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="rg">RG</label>
+        <input name="rg" placeholder="RG"
+                  class="form-control">{{ request.form['rg'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <label for="certidao">Certidão de Nascimento</label>
+        <input name="certidao" placeholder="Certidão de Nascimento"
+                  class="form-control">{{ request.form['certidao_nasc'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <label for="dtnasc">Data de Nascimento</label>
+        <input name="dtnasc" placeholder="Data de Nascimento"
+                  class="form-control">{{ request.form['dt_nasc'] }}</input>
+    </div>
+
+     <div class="form-group">
+        <label for="naturalidade">Naturalidade</label>
+        <input name="naturalidade" placeholder="Naturalidade"
+                  class="form-control">{{ request.form['naturalidade'] }}</input>
+     </div>
+
+    <div class="form-group">
+        <label for="uf">UF</label>
+        <input name="uf" placeholder="UF"
+                  class="form-control">{{ request.form['uf'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <label for="endereco">Endereço</label>
+        <input name="endereco" placeholder="Endereço"
+                  class="form-control">{{ request.form['endereco'] }}</input>
+    </div>
+     <div class="form-group">
+        <label for="genero">Gênero</label>
+        <input name="genero" placeholder="genero"
+                  class="form-control">{{ request.form['genero'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <label for="qtdirmao">Qtde de irmão</label>
+        <input name="qtdirmao" placeholder="Qtde de irmão"
+                  class="form-control">{{ request.form['qtdirmao'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <label for="qtdirma">Qtde de irmã</label>
+        <input name="qtdirma" placeholder="Qtde de irmã"
+                  class="form-control">{{ request.form['qtdirma'] }}</input>
+    </div>
+
+
+    <div class="form-group">
+        <label for="escola">Escola</label>
+        <input name="escola" placeholder="Escola"
+                  class="form-control">{{ request.form['escola'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <label for="grau">Grau de Escolaridade</label>
+        <input name="grau" placeholder="Grau de Escolaridade"
+                  class="form-control">{{ request.form['grau'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <label for="horario">Horário</label>
+        <input name="horario" placeholder="Horário"
+                  class="form-control">{{ request.form['horario'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <label for="vacina">Carteirinha de Vacina</label>
+        <input name="vacina" placeholder="Carteirinha de Vacina"
+                  class="form-control">{{ request.form['vacina'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <label for="informacao">Informação Médica</label>
+        <input name="informacao" placeholder="Informação Médica"
+                  class="form-control">{{ request.form['informacao'] }}</input>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+</form>
+{% endblock %}

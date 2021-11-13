@@ -1,0 +1,21 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+    border: 2px #eee solid;
+    color: brown;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    border: 2px #eee solid;
+    color: brown;
+    text-align: center;
+    padding: 10px;
+}

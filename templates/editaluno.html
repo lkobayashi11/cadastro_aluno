@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Alterar "{{ post['nome'] }}" {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" placeholder="Nome"
+               class="form-control"
+               value="{{ request.form['nome'] or post['nome'] }}">
+        </input>
+    </div>
+
+     <div class="form-group">
+        <label for="rg">RG</label>
+        <input name="rg" placeholder="RG"
+                  class="form-control"
+                  value=" {{ request.form['rg'] or post['rg'] }}">
+        </input>
+    </div>
+
+
+    <div class="form-group">
+        <label for="certidao">Certidão de Nascimento</label>
+        <input name="certidao" placeholder="Certidão de Nascimento"
+                  class="form-control"
+                  value = " {{ request.form['certidao'] or post['certidao_nasc'] }}">
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="dtnasc">Data de Nascimento</label>
+        <input name="dtnasc" placeholder="Data de Nascimento"
+                  class="form-control"
+                  value = "{{ request.form['dtnasc'] or post['dt_nasc'] }}">
+         </input>
+    </div>
+
+     <div class="form-group">
+        <label for="naturalidade">Naturalidade</label>
+        <input name="naturalidade" placeholder="Naturalidade"
+                  class="form-control"
+                  value="{{ request.form['naturalidade'] or post['naturalidade'] }} ">
+        </input>
+     </div>
+
+    <div class="form-group">
+        <label for="uf">UF</label>
+        <input name="uf" placeholder="UF"
+                  class="form-control"
+                  value = "{{ request.form['uf'] or post['UF'] }} ">
+
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="endereco">Endereço</label>
+        <input name="endereco" placeholder="Endereço"
+                  class="form-control"
+                  value = " {{ request.form['endereco'] or post['endereco']}} ">
+
+        </input>
+    </div>
+     <div class="form-group">
+        <label for="genero">Gênero</label>
+        <input name="genero" placeholder="genero"
+                  class="form-control"
+                  value = " {{ request.form['genero'] or post['genero'] }}">
+
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="qtdirmao">Qtde de irmão</label>
+        <input name="qtdirmao" placeholder="Qtde de irmão"
+                  class="form-control"
+                  value = " {{ request.form['qtdirmao'] or post['qtdirmao'] }}">
+
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="qtdirma">Qtde de irmã</label>
+        <input name="qtdirma" placeholder="Qtde de irmã"
+                  class="form-control"
+                  value = "{{ request.form['qtdirma'] or post['qtdirma'] }}">
+
+        </input>
+    </div>
+
+
+    <div class="form-group">
+        <label for="escola">Escola</label>
+        <input name="escola" placeholder="Escola"
+                  class="form-control"
+                  value = "{{ request.form['escola'] or post['escola'] }}" >
+
+        </input>
+    </div>
+    <div class="form-group">
+        <label for="grau">Grau de Escolaridade</label>
+        <input name="grau" placeholder="Grau de Escolaridade"
+                  class="form-control"
+                  value = "{{ request.form['grau'] or post['grau_escolaridade'] }}">
+
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="horario">Horário</label>
+        <input name="horario" placeholder="Horário"
+                  class="form-control"
+                  value = "{{ request.form['horario'] or post['horario'] }} ">
+
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="vacina">Carteirinha de Vacina</label>
+        <input name="vacina" placeholder="Carteirinha de Vacina"
+                  class="form-control"
+                  value = "{{ request.form['vacina'] or post['carterinha_vacina'] }} ">
+
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="informacao">Informação Médica</label>
+        <input name="informacao" placeholder="Informação Médica"
+                  class="form-control"
+                  value = "{{ request.form['informacao'] or post['informacao'] }} ">
+
+        </input>
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+</form>
+<hr>
+
+<form action="{{ url_for('delete_aluno', id=post['idaluno']) }}" method="POST">
+    <input type="submit" value="Excluir"
+            class="btn btn-danger btn-sm"
+            onclick="return confirm('Confirma a exclusão do aluno?')">
+</form>
+{% endblock %}

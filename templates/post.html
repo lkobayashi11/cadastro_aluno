@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ post['nome'] }} {% endblock %}</h2>
+    <p>CPF:{{ post['cpf'] }}</p>
+    <p>RG :{{ post['rg'] }}</p>
+    <p>Profissão: {{ post['profissao'] }}</p>
+    <span class="badge badge-primary">{{ post['created'] }}</span>
+{% endblock %}

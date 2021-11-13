@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>{% block title %}Aluno: {{ aluno['nome'] }} {% endblock %}</h3>
+    <p><b>RG  :</b>{{ aluno['rg'] }}</p>
+    <p><b>Certidão Nascimento: </b>{{ aluno['certidao_nasc'] }}</p>
+    <p><b>Data Nasc          :</b>{{ aluno['dt_nasc'] }}</p>
+    <p><b>Naturalidade :</b>{{ aluno['naturalidade'] }} &nbsp; &nbsp;  <b>UF: </b>{{ aluno['UF'] }}</p>
+    <p><b>Endereço :</b>{{ aluno['endereco'] }}</p>
+    <p><b>Gênero :</b>{{ aluno['genero'] }}</p>
+    <p><b>Qtde de irmão :</b>{{ aluno['qtdirmao'] }} &nbsp; &nbsp; <b>Qtde de irmã :</b>{{ aluno['qtdirma'] }} </p>
+    <p><b>Escola :</b>{{ aluno['escola'] }}</p>
+    <p><b>Grau Escolaridade :</b>{{ aluno['grau_escolaridade'] }} &nbsp; &nbsp; <b>Horário:</b> {{ aluno['horario'] }}</p>
+    <p><b>Carteirinha Vacina :</b>{{ aluno['carterinha_vacina'] }}</p>
+    <p><b>Informação médica :</b> {{ aluno['informacao'] }}</p>
+
+    <span class="badge badge-primary">{{ aluno['created'] }}</span>
+{% endblock %}

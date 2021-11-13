@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Alterar "{{ post['nome'] }}" {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" placeholder="Nome"
+               class="form-control"
+               value="{{ request.form['nome'] or post['nome'] }}">
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="rg">RG</label>
+        <textarea name="rg" placeholder="RG"
+                  class="form-control">{{ request.form['rg'] or post['rg'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="cpf">CPF</label>
+        <textarea name="cpf" placeholder="CPF"
+                  class="form-control">{{ request.form['cpf'] or post['cpf'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="profissao">Profissão</label>
+        <textarea name="profissao" placeholder="Profissão"
+                  class="form-control">{{ request.form['profissao'] or post['profissao'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+</form>
+<hr>
+
+<form action="{{ url_for('delete', id=post['idresponsavel']) }}" method="POST">
+    <input type="submit" value="Excluir"
+            class="btn btn-danger btn-sm"
+            onclick="return confirm('Confirma a exclusão do responsável?')">
+</form>
+{% endblock %}
