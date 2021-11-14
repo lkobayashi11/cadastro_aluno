@@ -5,14 +5,17 @@
     <p><b>RG  :</b>{{ aluno['rg'] }}</p>
     <p><b>Certidão Nascimento: </b>{{ aluno['certidao_nasc'] }}</p>
     <p><b>Data Nasc          :</b>{{ aluno['dt_nasc'] }}</p>
-    <p><b>Naturalidade :</b>{{ aluno['naturalidade'] }} &nbsp; &nbsp;  <b>UF: </b>{{ aluno['UF'] }}</p>
+    <p><b>Naturalidade :</b>{{ aluno['naturalidade'] }} &nbsp; &nbsp;  <b>UF Nasc: </b>{{ aluno['UF'] }}</p>
     <p><b>Endereço :</b>{{ aluno['endereco'] }}</p>
+    <p><b>Telefone :</b>{{ aluno['telefone'] }}</p>
     <p><b>Gênero :</b>{{ aluno['genero'] }}</p>
     <p><b>Qtde de irmão :</b>{{ aluno['qtdirmao'] }} &nbsp; &nbsp; <b>Qtde de irmã :</b>{{ aluno['qtdirma'] }} </p>
-    <p><b>Escola :</b>{{ aluno['escola'] }}</p>
+     <p><b>Escola :</b> {{ aluno['escola1'] }}</p>
     <p><b>Grau Escolaridade :</b>{{ aluno['grau_escolaridade'] }} &nbsp; &nbsp; <b>Horário:</b> {{ aluno['horario'] }}</p>
     <p><b>Carteirinha Vacina :</b>{{ aluno['carterinha_vacina'] }}</p>
     <p><b>Informação médica :</b> {{ aluno['informacao'] }}</p>
+    <p><b>Remédio :</b> {{ aluno['remedio'] }}</p>
+    <p><b>Responsável :</b> {{ aluno['responsavel'] }}</p>
 
     <span class="badge badge-primary">{{ aluno['created'] }}</span>
 {% endblock %}

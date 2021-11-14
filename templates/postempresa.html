@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>{% block title %} {{ empresa['nome'] }} {% endblock %}</h2>
+    <span class="badge badge-primary">{{ empresa['created'] }}</span>
+
+{% endblock %}

@@ -29,14 +29,14 @@
                   class="form-control">{{ request.form['dt_nasc'] }}</input>
     </div>
 
-     <div class="form-group">
+    <div class="form-group">
         <label for="naturalidade">Naturalidade</label>
         <input name="naturalidade" placeholder="Naturalidade"
                   class="form-control">{{ request.form['naturalidade'] }}</input>
      </div>
 
     <div class="form-group">
-        <label for="uf">UF</label>
+        <label for="uf">UF Nascimento</label>
         <input name="uf" placeholder="UF"
                   class="form-control">{{ request.form['uf'] }}</input>
     </div>
@@ -45,6 +45,11 @@
         <label for="endereco">Endereço</label>
         <input name="endereco" placeholder="Endereço"
                   class="form-control">{{ request.form['endereco'] }}</input>
+    </div>
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input name="telefone" placeholder="Telefone"
+                  class="form-control">{{ request.form['telefone'] }}</input>
     </div>
      <div class="form-group">
         <label for="genero">Gênero</label>
@@ -64,11 +69,18 @@
                   class="form-control">{{ request.form['qtdirma'] }}</input>
     </div>
 
-
     <div class="form-group">
-        <label for="escola">Escola</label>
-        <input name="escola" placeholder="Escola"
-                  class="form-control">{{ request.form['escola'] }}</input>
+       <label for="escola1">Escola</label>
+
+       <select name="escola1" id="escola1" placeholder="Escola"
+            class="form-control"> {{ request.form['escola1'] }}
+            <option value="{{ request.form['escola1'] }}" selected></option>
+            {% for escola in escolaList %}
+            <option value="{{ escola['idescola'] }}">
+            {{ escola['nome']}}
+            </option>
+            {% endfor %}
+        </select>
     </div>
 
     <div class="form-group">
@@ -94,6 +106,35 @@
         <input name="informacao" placeholder="Informação Médica"
                   class="form-control">{{ request.form['informacao'] }}</input>
     </div>
+
+    <div class="form-group">
+       <label for="remedio">Remédio</label>
+
+       <select name="remedio" id="remedio" placeholder="Remédio"
+            class="form-control"> {{ request.form['remedio'] }}
+            <option value="{{ request.form['remedio'] }}" selected></option>
+            {% for remedio in remedioList %}
+            <option value="{{ remedio['idinformacao'] }}">
+            {{ remedio['remedio']}}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="form-group">
+       <label for="responsavel">Responsável</label>
+
+       <select name="responsavel" id="responsavel" placeholder="Responsável"
+            class="form-control"> {{ request.form['responsavel'] }}
+            <option value="{{ request.form['responsavel'] }}" selected></option>
+            {% for responsavel in responsavelList %}
+            <option value="{{ responsavel['idresponsavel'] }}">
+            {{ responsavel['nome']}}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+
 
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Salvar</button>

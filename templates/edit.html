@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{% block title %} Alterar "{{ post['nome'] }}" {% endblock %}</h1>
+<h1 xmlns="http://www.w3.org/1999/html">{% block title %} Alterar "{{ post['nome'] }}" {% endblock %}</h1>
 
 <form method="post">
     <div class="form-group">
@@ -27,15 +27,18 @@
         <textarea name="profissao" placeholder="Profissão"
                   class="form-control">{{ request.form['profissao'] or post['profissao'] }}</textarea>
     </div>
+
+    <div class="form-group">
+        <label for="empresa">Empresa</label>
+        <textarea name="empresa" placeholder="Empresa"
+                  class="form-control">{{ request.form['empresa'] or post['empresa'] }}</textarea>
+
+    </div>
+
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Salvar</button>
     </div>
 </form>
 <hr>
 
-<form action="{{ url_for('delete', id=post['idresponsavel']) }}" method="POST">
-    <input type="submit" value="Excluir"
-            class="btn btn-danger btn-sm"
-            onclick="return confirm('Confirma a exclusão do responsável?')">
-</form>
 {% endblock %}

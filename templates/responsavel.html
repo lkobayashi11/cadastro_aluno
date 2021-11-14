@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% block title %}
-        <h1>Responsável </h1>
-        <h4> <a href="{{ url_for('create')}}">
-            <span class="badge badge-warning">Criar</span>
-            </a>
-        </h4>
-    {% endblock %}
+    <h1>{% block title %}
+        Cadastro de Responsável
+
+    {% endblock %} </h1>
+
+    <a href="{{ url_for('create')}}">
+            <h4><span class="badge badge-warning">Criar</span></h4>
+    </a>
 
     {% for post in posts %}
         <a href="{{ url_for('post', post_id=post['idresponsavel']) }}">

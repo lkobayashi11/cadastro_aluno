@@ -11,16 +11,13 @@
                value="{{ request.form['nome'] or post['nome'] }}">
         </input>
     </div>
-
-     <div class="form-group">
+    <div class="form-group">
         <label for="rg">RG</label>
         <input name="rg" placeholder="RG"
                   class="form-control"
                   value=" {{ request.form['rg'] or post['rg'] }}">
         </input>
     </div>
-
-
     <div class="form-group">
         <label for="certidao">Certidão de Nascimento</label>
         <input name="certidao" placeholder="Certidão de Nascimento"
@@ -46,11 +43,10 @@
      </div>
 
     <div class="form-group">
-        <label for="uf">UF</label>
+        <label for="uf">UF Nascimento</label>
         <input name="uf" placeholder="UF"
                   class="form-control"
                   value = "{{ request.form['uf'] or post['UF'] }} ">
-
         </input>
     </div>
 
@@ -59,6 +55,13 @@
         <input name="endereco" placeholder="Endereço"
                   class="form-control"
                   value = " {{ request.form['endereco'] or post['endereco']}} ">
+        </input>
+    </div>
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input name="telefone" placeholder="Telefone"
+                  class="form-control"
+                  value = " {{ request.form['telefone'] or post['telefone']}} ">
 
         </input>
     </div>
@@ -67,7 +70,6 @@
         <input name="genero" placeholder="genero"
                   class="form-control"
                   value = " {{ request.form['genero'] or post['genero'] }}">
-
         </input>
     </div>
 
@@ -76,7 +78,6 @@
         <input name="qtdirmao" placeholder="Qtde de irmão"
                   class="form-control"
                   value = " {{ request.form['qtdirmao'] or post['qtdirmao'] }}">
-
         </input>
     </div>
 
@@ -85,17 +86,13 @@
         <input name="qtdirma" placeholder="Qtde de irmã"
                   class="form-control"
                   value = "{{ request.form['qtdirma'] or post['qtdirma'] }}">
-
         </input>
     </div>
-
-
     <div class="form-group">
         <label for="escola">Escola</label>
         <input name="escola" placeholder="Escola"
                   class="form-control"
-                  value = "{{ request.form['escola'] or post['escola'] }}" >
-
+                  value = "{{ request.form['escola1'] or post['escola1'] }}" >
         </input>
     </div>
     <div class="form-group">
@@ -103,37 +100,45 @@
         <input name="grau" placeholder="Grau de Escolaridade"
                   class="form-control"
                   value = "{{ request.form['grau'] or post['grau_escolaridade'] }}">
-
         </input>
     </div>
-
     <div class="form-group">
         <label for="horario">Horário</label>
         <input name="horario" placeholder="Horário"
                   class="form-control"
                   value = "{{ request.form['horario'] or post['horario'] }} ">
-
         </input>
     </div>
-
     <div class="form-group">
         <label for="vacina">Carteirinha de Vacina</label>
         <input name="vacina" placeholder="Carteirinha de Vacina"
                   class="form-control"
                   value = "{{ request.form['vacina'] or post['carterinha_vacina'] }} ">
-
         </input>
     </div>
-
     <div class="form-group">
         <label for="informacao">Informação Médica</label>
         <input name="informacao" placeholder="Informação Médica"
                   class="form-control"
                   value = "{{ request.form['informacao'] or post['informacao'] }} ">
-
         </input>
     </div>
 
+    <div class="form-group">
+        <label for="remedio">Remédio</label>
+        <input name="remedio" placeholder="Remédio"
+                  class="form-control"
+                  value = "{{ request.form['remedio'] or post['remedio'] }} ">
+        </input>
+    </div>
+
+     <div class="form-group">
+        <label for="responsavel">Responsável</label>
+        <input name="responsavel" placeholder="Responsável"
+                  class="form-control"
+                  value = "{{ request.form['responsavel'] or post['responsavel'] }} ">
+        </input>
+    </div>
 
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Salvar</button>

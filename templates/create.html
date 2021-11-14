@@ -31,10 +31,12 @@
 
     <div class="form-group">
        <label for="empresa">Empresa em que trabalha</label>
-       <select name="empresa" id="empresa">
+
+       <select name="empresa" id="empresa" placeholder="Empresa"
+            class="form-control"> {{ request.form['empresa'] }}
+            <option value="{{ request.form['empresa'] }}" selected></option>
             {% for empresas in empresaList %}
-            <option value="{{ empresas['idempresa'] }}" selected>
-            {{ empresas['idempresa']}}
+            <option value="{{ empresas['idempresa'] }}">
             {{ empresas['nome']}}
             </option>
 
